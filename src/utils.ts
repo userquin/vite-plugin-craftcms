@@ -1,13 +1,10 @@
 import { HTMLElement, parse } from "node-html-parser";
 import { ParsedHtml, TemplateParams } from "./types";
 
-// include also `rawTagName`
+// include also `rawTagName`, it is not working
 function isValidElement(item: any): boolean {
   return item instanceof HTMLElement
-    && [
-      "script",
-      "link",
-    ].includes(item.tagName);
+    && (["script", "link"].includes(item.tagName) || ["script", "link"].includes(item.rawTagName));
 }
 
 /**
