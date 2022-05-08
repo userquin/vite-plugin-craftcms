@@ -1,6 +1,7 @@
 import { HTMLElement, parse } from "node-html-parser";
 import { ParsedHtml, TemplateParams } from "./types";
 
+// include also `rawTagName`
 function isValidElement(item: any): boolean {
   return item instanceof HTMLElement
     && [
